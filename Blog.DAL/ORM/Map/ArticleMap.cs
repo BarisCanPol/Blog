@@ -14,6 +14,7 @@ namespace Blog.DAL.ORM.Map
             ToTable("dbo.Articles");
             Property(d => d.Header).HasMaxLength(100).IsRequired();
             Property(d => d.Content).HasMaxLength(100).IsRequired();
+            Property(r => r.PublishDate).IsOptional();
 
 
             HasRequired(h => h.Category)

@@ -49,6 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Entity\AppUserRepository.cs" />
+    <Compile Include="Repository\Entity\ArticleRepository.cs" />
+    <Compile Include="Repository\Entity\BaseRepository.cs" />
+    <Compile Include="Repository\Entity\CategoryRepository.cs" />
+    <Compile Include="Repository\Entity\CommentRepository.cs" />
+    <Compile Include="Repository\Entity\LikeRepository.cs" />
+    <Compile Include="Service\EntityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

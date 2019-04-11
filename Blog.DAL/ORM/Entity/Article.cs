@@ -12,6 +12,7 @@ namespace Blog.DAL.ORM.Entity
         public string Header { get; set; }
         public string SubTitle { get; set; }
         public string Content { get; set; }
+        public DateTime PublishDate { get; set; }
         
 
         public Guid AppUserID { get; set; }

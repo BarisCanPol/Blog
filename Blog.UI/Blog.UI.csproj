@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -88,11 +94,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\AdminLTE.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\ionicons.min.css" />
+    <Content Include="Content\css\_all-skins.min.css" />
+    <Content Include="Content\images\LoadingGif.gif" />
+    <Content Include="Content\scripts\adminlte.min.js" />
+    <Content Include="Content\scripts\bootstrap.min.js" />
+    <Content Include="Content\scripts\demo.js" />
+    <Content Include="Content\scripts\fastclick.js" />
+    <Content Include="Content\scripts\jquery.min.js" />
+    <Content Include="Content\scripts\jquery.slimscroll.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AppUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
+    <Compile Include="Areas\Author\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Author\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Author\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Author\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Author\Models\VM\ArticleCommentVM.cs" />
+    <Compile Include="Areas\Author\Models\VM\CommentVM.cs" />
+    <Compile Include="Areas\Author\Models\VM\JsonLikeVM.cs" />
+    <Compile Include="Areas\Author\Models\VM\LoginVm.cs" />
+    <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -100,6 +132,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\AdminLayoutPage.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUser\Add.cshtml" />
+    <Content Include="Areas\Author\Views\web.config" />
+    <Content Include="Areas\Author\Views\Shared\AuthorLayoutPage.cshtml" />
+    <Content Include="Areas\Member\Views\web.config" />
+    <Content Include="Areas\Member\Views\Shared\MemberLayoutPage.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -110,8 +149,28 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Areas\Author\Views\Account\" />
+    <Folder Include="Areas\Author\Views\Article\" />
+    <Folder Include="Areas\Author\Views\Base\" />
+    <Folder Include="Areas\Author\Views\Home\" />
+    <Folder Include="Areas\Member\Controllers\" />
+    <Folder Include="Areas\Member\Models\" />
+    <Folder Include="Content\fonts\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.BLL\Blog.BLL.csproj">
+      <Project>{4793b72f-cfc7-41fb-959d-a927e61709cd}</Project>
+      <Name>Blog.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.DAL\Blog.DAL.csproj">
+      <Project>{be06ac1c-5910-4b2b-9697-e7bcebf26c37}</Project>
+      <Name>Blog.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
