@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog.DAL.ORM.Interface
 {
-   public  class IBaseEntity
+   public  interface IBaseEntity
     {
         Guid ID { get; set; }
         DateTime AddDate { get; set; }
